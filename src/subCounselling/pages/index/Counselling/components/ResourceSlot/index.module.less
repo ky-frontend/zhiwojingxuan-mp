@@ -1,0 +1,72 @@
+@import url('@/assets/common.less');
+@import url('@/assets/font.less');
+
+.jingangListView {
+  width: 375px;
+  box-sizing: border-box;
+  margin: 16px 0;
+  // height: 96px;
+  
+  // margin-top: -12px;
+
+  .jingangViewScroll {
+    width: 375px;
+  }
+
+  .jingangView {
+    width: fit-content;  
+    // height: 73px;
+    // padding-bottom: 8px;
+    white-space: nowrap;
+
+    .jingangItem {
+      display: inline-block;
+      width: 72px;
+      // margin-top: 6px;
+
+      .jingangItemImg {
+        width: 42px;
+        height: 42px;
+        margin: auto;
+
+        .icon {
+          display: block;
+          width: 42px;
+          height: 42px;
+        }
+      }
+
+      .jingangItemTitle {
+        .font_C3();
+        opacity: 0.6;
+        padding-top: 4px;
+        text-align: center;
+      }
+    }
+
+    .jingangItem:first-child {
+      margin-left: 9px;
+    }
+
+    .jingangItem:last-child {
+      margin-right: 23px;
+    }
+  }
+
+  .huacao {
+    position: relative;
+    width: 26px;
+    height: 2px;
+    margin: auto;
+    background: #f2f2f2;
+
+    .hua {
+      position: absolute;
+      top: 0;
+      width: 13px;
+      height: 2px;
+      background: #000;
+      opacity: 0.8;
+    }
+  }
+}

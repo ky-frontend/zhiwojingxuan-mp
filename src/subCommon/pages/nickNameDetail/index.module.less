@@ -1,0 +1,69 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.me_nickName_info {
+  height: 100vh;
+  overflow-y: auto;
+  background: #fff;
+  position: relative;
+
+  .me_nickName_info_top {
+    padding: 28px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .me_nickName_info_top_txt {
+      .font_H1();
+      font-weight: 400;
+    }
+
+    .me_nickName_info_top_img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+  }
+
+  .me_nickName_info_name {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .me_nickName_info_name_l {
+      .font_H6();
+      opacity: 40%;
+    }
+
+    .me_nickName_info_name_r {
+      .font_H6();
+    }
+  }
+
+  // toast
+  .me_nickName_info_toast {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .me_nickName_info_toast_txt {
+      width: 287px;
+      height: 44px;
+      background: #000000;
+      border-radius: 2px;
+      opacity: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .font_H6();
+      font-weight: 400;
+      color: #FFF;
+    }
+  }
+}

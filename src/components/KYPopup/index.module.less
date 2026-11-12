@@ -1,0 +1,60 @@
+@import url('@/assets/font.less');
+.popup{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  animation: changeColor 250ms;
+  background: rgba(0,0,0,0.5);
+  @keyframes changeColor {
+    0% {
+      background-color: #fff;
+    }
+    100% {
+      background: rgba(0,0,0,0.5);
+    }
+  }
+  .content{
+    animation: moveToButton 250ms;
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    width: 355px;
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+  @keyframes moveToButton {
+    0% {bottom: -100vh;
+    }
+    100% {bottom: 30px;
+    }
+  }
+  .center{
+    position: absolute;
+    animation: moveToCenter 250ms;
+    bottom: 58%;
+    transform: translateY(75%);
+    left: 10px;
+    right: 10px;
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+  @keyframes moveToCenter {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+      bottom: 0%;
+      transform: translateY(75%);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      bottom: 58%;
+      transform: translateY(75%);
+    }
+  }
+
+}

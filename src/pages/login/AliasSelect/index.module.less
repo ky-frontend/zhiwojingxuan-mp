@@ -1,0 +1,110 @@
+@import url('@/assets/font.less');
+.AliasSelect {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #fbfbfb 0%, #f6f6f6 46%, #f5f5f5 100%);
+
+  .logoview {
+    padding-top: 52px;
+    .p1 {
+      .font_H3();
+
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+  .aliasListView {
+    padding-top: 50px;
+
+    .aliasItem {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 311px;
+      height: 116px;
+      margin: 0 auto 20px;
+      background: #fff;
+      border: 1px solid rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+
+      .avator {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin-left: 26px;
+
+        .img {
+          width: 70px;
+          height: 70px;
+          overflow: hidden;
+          border: 1px solid rgb(0 0 0 / 0.1);
+          border-radius: 50%;
+        }
+
+        .tagImg {
+          position: relative;
+          top: -33px;
+          left: 8px;
+          width: 56px;
+          height: 16px;
+        }
+      }
+
+      .aliasItemright {
+        padding-left: 15px;
+
+        .p1 {
+          font-weight: bold;
+          .font_H4();
+        }
+
+        .p2 {
+          .font_C3();
+
+          margin-top: 6px;
+          color: rgb(0 0 0 / 0.4);
+        }
+      }
+
+      .tag {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        padding: 0 4px;
+        color: rgb(0 0 0 / 0.3);
+        border: 1px solid rgb(0 0 0 / 0.1);
+        .font_N1();
+      }
+    }
+
+    .aliasItemAc {
+      border: 1px solid #646ed9;
+    }
+  }
+
+  .bottomarea {
+    position: fixed;
+    bottom: 0;
+    width: 375px;
+    height: 90px;
+
+    .submitbottombtn {
+      position: relative;
+      left: 4%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 343px;
+      height: 44px;
+      margin-top: 14px;
+      color: rgb(255 255 255 / 1);
+      background: #646ed9;
+      .font_H5();
+    }
+  }
+}

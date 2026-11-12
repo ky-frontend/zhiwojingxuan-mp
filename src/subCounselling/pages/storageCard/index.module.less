@@ -1,0 +1,314 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.StorageCard {
+  .header {
+    padding: 10px 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .img {
+      width: 222px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .header_right {
+      width: 62px;
+      height: 28px;
+      border-radius: 14px;
+      border: 1px solid #e9e9e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .txt {
+        .font_C3();
+        margin-top: 0.5px;
+      }
+    }
+  }
+
+  .myBalance {
+    padding: 0 16px 0 16px;
+    display: flex;
+    align-items: center;
+
+    .txt {
+      .font_C1();
+    }
+
+    .money_wrapper {
+      display: flex;
+      align-items: flex-end;
+
+      .symbol {
+        font-family: 'PingFangTC, PingFangTC';
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        margin-right: 1px;
+      }
+
+      .money {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .record {
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+
+      .txt {
+        .font_C3();
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .package {
+    padding: 25px 16px 25px 16px;
+
+    .package_item {
+      width: 343px;
+      height: 100px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #efefef;
+      display: flex;
+      margin-bottom: 16px;
+      position: relative;
+
+      // 最多人选
+      .sign {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 21px;
+        border-radius: 0px 11px 0px 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .txt {
+          .font_N1();
+          color: #ffffff;
+        }
+
+        &.more {
+          width: 69px;
+          background: #646ed9;
+        }
+
+        &.new {
+          width: 120px;
+          background: #f85d48;
+        }
+      }
+
+      &.active {
+        background: #eff0fc;
+        border: 1px solid #a8aef0;
+
+        .left {
+          background: #e1e3fc;
+
+          .left_money {
+            .symbol {
+              color: #3b3fbd;
+            }
+
+            .money {
+              color: #3b3fbd !important;
+            }
+          }
+
+          .left_money_free {
+            .song_money {
+              .symbol {
+                color: #3b3fbd;
+              }
+
+              .song_money_detail {
+                color: #3b3fbd !important;
+              }
+            }
+          }
+        }
+      }
+
+      .left {
+        width: 104px;
+        height: 100%;
+        background: #f5f5f5;
+        border-radius: 11px 0px 0px 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .left_money {
+          display: flex;
+          align-items: baseline;
+
+          .symbol {
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+            font-size: 15px;
+            margin-right: 1px;
+          }
+
+          .money {
+            font-weight: bold;
+            font-size: 22px;
+            color: rgba(0, 0, 0, 0.8) !important;
+            line-height: 26px;
+          }
+        }
+
+        .left_money_free {
+          display: flex;
+          margin-top: 9px;
+          font-size: 12px;
+          align-items: baseline;
+
+          .song {
+            .font_C3();
+            color: rgba(0, 0, 0, 0.8);
+            margin-right: 2px;
+            font-size: 14px;
+            padding-bottom: 1px;
+          }
+
+          .song_money {
+            display: flex;
+            align-items: baseline;
+
+            .symbol {
+              color: rgba(0, 0, 0, 0.8);
+              font-weight: bold;
+              margin-right: 2px;
+              font-size: 14px;
+            }
+
+            .song_money_detail {
+              color: rgba(0, 0, 0, 0.8) !important;
+              font-size: 16px;
+              line-height: 17px;
+            }
+          }
+        }
+      }
+
+      .right {
+        margin-top: 16px;
+        margin-left: 16px;
+
+        .total_money {
+          .font_C1();
+          margin-bottom: 4px;
+        }
+
+        .detail {
+          .font_C1();
+          margin-bottom: 6px;
+        }
+
+        .zhe {
+          .font_C3();
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // 立即充值
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      width: 343px;
+      height: 44px;
+      background: #646ed9;
+      border-radius: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .txt {
+        .font_H5();
+        color: #ffffff;
+        font-weight: bolder;
+      }
+
+      .symbol {
+        margin-left: 4px;
+        font-family: 'PingFangTC, PingFangTC';
+        font-weight: 600;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        letter-spacing: 1px;
+        text-align: center;
+        font-style: normal;
+      }
+
+      .money {
+        font-size: 18px;
+        color: #ffffff !important;
+        line-height: 21px;
+        letter-spacing: 1px;
+        text-align: center;
+        font-style: normal;
+      }
+    }
+  }
+
+  .buy_notice {
+    padding: 30px 16px 14px 16px;
+
+    .buy_notice_header {
+      .font_C1();
+      color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .buy_notice_content {
+      margin-top: 10px;
+      .font_P4();
+      color: rgba(0, 0, 0, 0.8);
+      text-align: justify;
+
+      &.buy_notice_content_last {
+        margin-bottom: 30px;
+
+        .txt {
+          display: inline;
+          color: rgba(59, 63, 189, 1);
+        }
+      }
+
+      .t {
+        color: #3B3FBD;
+      }
+    }
+  }
+}

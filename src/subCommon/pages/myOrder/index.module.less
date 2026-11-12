@@ -1,0 +1,52 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.MyOrder {
+  // height: 100vh;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+
+  .MyOrder_navBg{
+    background-color: #fff;
+  }
+  .headerFixed {
+    position: fixed;
+    z-index: 999;
+    width: 375px;
+    height: 58px;
+    background-color: #fff;
+
+    .tab {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 16px;
+      overflow: auto;
+
+      .tabItem {
+        min-width: 66px;
+        padding: 5px 12px;
+        font-family: PingFangTC-Regular, PingFangTC;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        color: rgb(0 0 0 / 0.6);
+        text-align: center;
+        background: #f5f5f5;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        &.active {
+          color: #fff;
+          background: #646ed9;
+        }
+      }
+    }
+  }
+  .kong{
+    height: 58px;
+    background-color: #fff;
+  }
+}

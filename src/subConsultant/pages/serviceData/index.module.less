@@ -1,0 +1,50 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.pages {
+  width: 100%;
+  height: 100%;
+  .title{
+    .font_C3();
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 16px;
+    margin-bottom: 10px;
+  }
+  .item{
+    background: #F7F7F7;
+    border-radius: 4px;
+    margin: 0 16px 10px;
+    position: relative;
+    .txt{
+      .font_H6();
+      font-weight: 400;
+      font-size: 15px;
+      text-align: left;
+      padding: 17px 0 18px 14px;
+    }
+    .status{
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 19px;
+      right: 17px;
+      .font_C2();
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 13px;
+      &.noOk{
+        color: #F85D48;
+      }
+
+      .img{
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+}
+

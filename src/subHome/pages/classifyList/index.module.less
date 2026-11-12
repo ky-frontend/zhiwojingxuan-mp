@@ -1,0 +1,196 @@
+@import url('@/assets/font.less');
+
+.index {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+
+  .nav {
+    background-color: #fff;
+  }
+
+  .list {
+    padding: 0 16px;
+  }
+
+  .item {
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    display: flex;
+    width: 100%;
+
+    .left {
+      position: relative;
+      width: 68px;
+
+      .avatar {
+        width: 60px;
+        height: 80px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      .state1 {
+        position: absolute;
+        height: 12px;
+        top: 73px;
+        width: 36px;
+        left: calc(50% - 4px);
+        transform: translate(-50%);
+        text-align: center;
+
+        font-size: 9px;
+        border-radius: 7px;
+
+
+        color: #ce8122;
+        background: #fff4e5;
+      }
+
+      .state2 {
+        color: #383ca9;
+        background: #ebedff;
+      }
+
+      .state3 {
+        color: rgba(0, 0, 0, 0.4);
+        background: #f7f7f7;
+      }
+
+      .tag {
+        position: absolute;
+        width: 44px;
+        height: 12px;
+        left: calc(50% - 4px);
+        top: 73px;
+        transform: translate(-50%);
+      }
+    }
+
+    .right {
+      width: calc(100% - 68px);
+
+      .name {
+        .font_H3();
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .count {
+        color: rgba(0, 0, 0, .5);
+        margin: 2px 0;
+        font-size: 10px;
+
+        .pp {
+          display: flex;
+        }
+      }
+
+      .tags {
+        margin: 4px 0;
+        display: flex;
+        align-items: center;
+
+        .tag {
+          background: #eef0fc;
+          color: #5B5D8E;
+          padding: 2px 4px;
+          margin-right: 6px;
+          font-size: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .desc {
+        .font_P5();
+        font-size: 12px;
+
+        opacity: 0.8;
+        margin-top: 6px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 19px;
+        -webkit-line-clamp: 3; //多行在这里修改数字即可
+        overflow: hidden;
+        /*! autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+      }
+
+      .p {
+        font-size: 12px;
+        color: #6C75DB;
+
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .price {
+          font-size: 12px;
+          display: flex;
+
+          .priceText {
+            margin-right: 5px;
+
+            .t1 {
+              margin-left: 2px;
+              color: #F85D48;
+            }
+
+            .t2 {
+              color: rgba(0, 0, 0, .5);
+              font-size: 11px;
+              margin-left: 2px;
+            }
+          }
+        }
+
+        .b {
+          width: 66px;
+          height: 22px;
+          background-color: #646ED9;
+          color: #fff;
+          border-radius: 10px;
+          line-height: 22px;
+          text-align: center;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .item:last-child {
+    padding-bottom: 20px;
+  }
+
+  .noData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+
+    >.img {
+      width: 140px;
+      height: 140px;
+    }
+
+    >.text {
+      font-family: PingFangSC-Regular, 'PingFang SC';
+      font-weight: 400;
+      color: rgb(0 0 0 / 0.4);
+    }
+  }
+
+}

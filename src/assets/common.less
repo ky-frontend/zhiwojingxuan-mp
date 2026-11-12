@@ -1,0 +1,68 @@
+/* 显示一行，超出部分用省略号显示 */
+.text-line1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-line2 {
+  .ellipsis(2);
+}
+
+.ellipsis(@line: 1) {
+  /* 盒子模型 */
+  display: -webkit-box;
+  overflow: hidden;
+
+  /* 文字超出用省略号 */
+  text-overflow: ellipsis;
+
+  /* 子元素的垂直排列方式 */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  content: '.';
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/* flex布局 */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 隐藏滚动条 */
+.hideScrollbar {
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 适配iPhoneX底部安全区域 */
+.safeAreaInsetBottom(@px: 0px) {
+  padding-bottom: 18px;
+  padding-bottom: 18px;
+}
+
+.kyloading {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  z-index: 10000;
+  width: 60px;
+  height: 60px;
+  transform: translateX(-30px);
+}

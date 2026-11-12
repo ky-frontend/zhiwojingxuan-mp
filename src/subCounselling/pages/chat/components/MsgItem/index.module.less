@@ -1,0 +1,329 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.messageWrap {
+  display: flex;
+  margin: 16px 16px;
+  &:nth-last-child(1) {
+    padding-bottom: 20px;
+  }
+
+  .tipsMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: PingFangSC-Regular, 'PingFang SC';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgb(0 0 0 / 0.4);
+    letter-spacing: 1px;
+
+    .tipsContent {
+      padding: 10px 12px;
+      // background: #e7e7e7;
+    }
+  }
+
+  // ----------------------------接收/发送消息公共样式，包括文字、图片、语音、自定义消息----------------------------
+  // ---------------------------只修改接收或发送消息最底下有对应的接收/发送消息样式--------------------------------
+  .content {
+    .messageBox {
+      display: flex;
+      align-items: center;
+
+      .message {
+        max-width: 239px;
+        box-sizing: border-box;
+        padding: 9px 12px;
+        .font_P3();
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #000;
+        letter-spacing: 1px;
+        overflow-wrap: break-word;
+        white-space: pre-line;
+        background: #fff;
+        border-radius: 2px;
+        .font_P3();
+      }
+    }
+
+    // 引用消息样式
+    .quoteMessageBox {
+      display: flex;
+      margin-top: 6px;
+
+      .textWrap {
+        max-width: 360px;
+        padding: 10px 12px;
+        cursor: pointer;
+        background: #e7e7e7;
+        border-radius: 4px;
+
+        .text {
+          font-family: PingFangSC-Regular, 'PingFang SC';
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 22px;
+          color: rgb(0 0 0 / 0.6);
+          .text-line2;
+        }
+      }
+
+      .audio {
+        display: flex;
+        padding: 9px 12px;
+        font-family: PingFangSC-Regular, 'PingFang SC';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgb(0 0 0 / 0.6);
+        letter-spacing: 1px;
+        background: #e7e7e7;
+        border-radius: 4px;
+
+        > Image {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .closeIcon {
+        position: absolute;
+        top: 50%;
+        right: -26px;
+        color: #d4d4d4;
+        cursor: pointer;
+        transform: translateY(-50%);
+      }
+    }
+
+    &.TIMImageElem {
+      image {
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+
+    &.TIMCustomElem {
+      .customMessage {
+        .callMessage {
+          display: flex;
+          .messageBox .message;
+
+          .callIcon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+        }
+
+        .timeMessage {
+          width: 150px;
+          padding: 16px;
+          background: #fff;
+          border-radius: 4px;
+
+          .timeTop {
+            display: flex;
+            align-items: center;
+            padding-bottom: 12px;
+            font-family: PingFangSC-Regular, 'PingFang SC';
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #f5f5f5;
+
+            .timeIcon {
+              width: 24px;
+              height: 24px;
+              margin-right: 4px;
+            }
+          }
+
+          .timeContent {
+            padding-top: 3px;
+
+            .timeItem {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 16px;
+              font-family: PingFangSC-Regular, 'PingFang SC';
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 18px;
+              color: rgb(0 0 0 / 0.4);
+            }
+          }
+        }
+      }
+    }
+
+    &.TIMSoundElem {
+      .audioWrap {
+        .audioContent {
+          display: flex;
+
+          .audio {
+            display: flex;
+            padding: 10px 12px;
+            font-family: PingFangSC-Regular, 'PingFang SC';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #000;
+            letter-spacing: 1px;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 4px;
+
+            > .voiceIcon {
+              width: 24px;
+              height: 24px;
+              margin-right: 8px;
+              background: url('https://cdn-public.knowyourself.cc/icon/liaoyu/icon_voice_20230828.png')
+                no-repeat;
+              background-size: 100% 100%;
+
+              &.playing {
+                animation: switchImg 1.2s ease-in-out infinite;
+              }
+
+              @keyframes switchImg {
+                0% {
+                  background: url('https://cdn-public.knowyourself.cc/icon/liaoyu/icon_voice_20230828.png')
+                    no-repeat;
+                  background-size: 100% 100%;
+                }
+
+                33% {
+                  background: url('https://cdn-public.knowyourself.cc/icon/liaoyu/icon_voice_20231010.png')
+                    no-repeat;
+                  background-size: 100% 100%;
+                }
+
+                66% {
+                  background: url('https://cdn-public.knowyourself.cc/icon/liaoyu/icon_voice_20231011.png')
+                    no-repeat;
+                  background-size: 100% 100%;
+                }
+
+                100% {
+                  background: url('https://cdn-public.knowyourself.cc/icon/liaoyu/icon_voice_20230828.png')
+                    no-repeat;
+                  background-size: 100% 100%;
+                }
+              }
+            }
+
+            > .semicolonIcon {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+
+        .audioText {
+          margin-top: 6px;
+          .messageBox .message;
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------接收消息 - 左侧样式-------------------------------
+.flowIn {
+  .content {
+    margin-left: 12px;
+
+    &.TIMSoundElem {
+      .audioWrap {
+        .audioContent {
+          .redDot {
+            align-self: center;
+            width: 10px;
+            height: 10px;
+            margin-left: 10px;
+            background: #f9514d;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -------------------------------发送消息 - 右侧样式-------------------------------
+.flowOut {
+  flex-direction: row-reverse;
+
+  .content {
+    margin-right: 12px;
+
+    .messageBox {
+      justify-content: flex-end;
+
+      .status {
+        align-self: flex-end;
+        margin-right: 10px;
+        font-family: PingFangSC-Regular, 'PingFang SC';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #646ed9;
+        letter-spacing: 1px;
+
+        &.read {
+          color: rgb(0 0 0 / 0.4);
+        }
+      }
+
+      .message {
+        background: #e3e6fa;
+      }
+    }
+
+    // 引用消息样式
+    .quoteMessageBox {
+      flex-direction: row-reverse;
+    }
+
+    &.TIMCustomElem {
+      .customMessage {
+        .callMessage {
+          display: flex;
+          flex-direction: row-reverse;
+
+          .callIcon {
+            margin-right: 0;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    &.TIMSoundElem {
+      .audioWrap {
+        .audioContent {
+          justify-content: flex-end;
+
+          .audio {
+            flex-direction: row-reverse;
+            padding-left: 24px;
+            background: #e3e6fa;
+
+            .voiceIcon {
+              margin-right: 0;
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

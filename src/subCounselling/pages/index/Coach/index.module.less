@@ -1,0 +1,276 @@
+@import url('@/assets/common.less');
+@import url('@/assets/font.less');
+
+.index {
+
+  .tipsView {
+    width: 375px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    .i1,
+    .i2,
+    .i3 {
+      width: 26px;
+      height: $width;
+      margin-right: 16px;
+    }
+
+    .p {
+      font-size: 13px;
+      margin-left: 16px;
+      flex: 1;
+    }
+  }
+
+  // 困扰标签金刚位（对齐情绪下头 ResourceSlot）
+  .jingangListView {
+    width: 375px;
+    box-sizing: border-box;
+    margin: 16px 0;
+
+    .jingangViewScroll {
+      width: 375px;
+    }
+
+    // <5 条：宽度等分，内容居中
+    .jingangEqual {
+      display: flex;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 16px;
+
+      .jingangEqualItem {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .jingangItemImg {
+      width: 42px;
+      height: 42px;
+      margin: auto;
+
+      .icon {
+        display: block;
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    .jingangItemTitle {
+      .font_C3();
+      opacity: 0.6;
+      padding-top: 4px;
+      text-align: center;
+    }
+
+    // >=5 条：保持原横向滚动布局
+    .jingangView {
+      width: fit-content;
+      white-space: nowrap;
+
+      .jingangItem {
+        display: inline-block;
+        width: 72px;
+
+        .jingangItemImg {
+          width: 42px;
+          height: 42px;
+          margin: auto;
+
+          .icon {
+            display: block;
+            width: 42px;
+            height: 42px;
+          }
+        }
+
+        .jingangItemTitle {
+          .font_C3();
+          opacity: 0.6;
+          padding-top: 4px;
+          text-align: center;
+        }
+      }
+
+      .jingangItem:first-child {
+        margin-left: 9px;
+      }
+
+      .jingangItem:last-child {
+        margin-right: 23px;
+      }
+    }
+
+    .huacao {
+      position: relative;
+      width: 26px;
+      height: 2px;
+      margin: auto;
+      background: #f2f2f2;
+
+      .hua {
+        position: absolute;
+        top: 0;
+        width: 13px;
+        height: 2px;
+        background: #000;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .item {
+    box-sizing: border-box;
+    display: flex;
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f1f1;
+
+    .left {
+      width: 72px;
+      position: relative;
+
+      .avatar {
+        width: 60px;
+        height: 80px;
+        border-radius: 8px;
+      }
+    }
+
+    .right {
+      width: calc(100% - 72px);
+
+      .info {
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+          padding-bottom: 2px;
+        }
+
+        .priceText {
+          display: flex;
+
+          .p21 {
+            font-size: 10px;
+            line-height: 21px;
+          }
+
+          .p22 {
+            font-size: 15px;
+            line-height: 21px;
+          }
+
+          .p23 {
+            font-size: 10px;
+            line-height: 21px;
+            opacity: 0.4;
+          }
+        }
+
+
+
+      }
+
+      .p2 {
+        display: flex;
+        font-size: 10px;
+        color: rgba(0, 0, 0, .7);
+      }
+
+      .pp {
+        margin-top: 8px;
+        display: flex;
+
+
+        .tImg {
+          width: 38px;
+          height: 21px;
+        }
+
+        .c {
+          margin-left: 4px;
+          padding: 2px 4px;
+          background-color: #F0F2FC;
+          color: #5B5D8E;
+          font-size: 10px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+      }
+
+      .desc {
+        margin-top: 6px;
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; //多行在这里修改数字即可
+        overflow: hidden;
+        display: -webkit-box;
+        // max-height: 32px;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        letter-spacing: 1px;
+        white-space: pre-wrap;
+      }
+
+      .p1 {
+        margin-top: 6px;
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; //多行在这里修改数字即可
+        overflow: hidden;
+        display: -webkit-box;
+        // max-height: 32px;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        letter-spacing: 1px;
+        color: #6C75DB;
+      }
+
+    }
+
+  }
+
+  // 空状态
+  .empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+
+    .img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .txt {
+      .font_G4();
+      opacity: 0.3;
+    }
+  }
+
+  .item:last-child {
+    padding-bottom: 90px;
+  }
+
+  .firstItem {
+    padding-bottom: 18px !important;
+  }
+
+}

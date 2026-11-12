@@ -1,0 +1,73 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.serviceNotice {
+  width: 100%;
+  background-color:rgba(245, 245, 245, 1);
+  .back{
+    background-color: #fff;
+  }
+  .content{
+    margin: 0 20px;
+
+    .item{
+      margin-top: 28px;
+      width: 100%;
+      .time{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+        .font_C3();
+        font-weight: 400;
+        font-size: 12px;
+        color: rgba(0,0,0,0.4);
+      }
+      .center{
+        padding: 16px 16px 13px;
+        background-color: #fff;
+        .title{
+          .font_P2();
+          font-weight: bold;
+          font-size: 15px;
+          color: #000000;
+          letter-spacing: 1px;
+          margin-bottom: 8px;
+        }
+        .Content{
+          .font_P4();
+          font-weight: 400;
+          font-size: 13px;
+          color: rgba(0,0,0,0.4);
+          letter-spacing: 1px;
+          padding-bottom: 16px;
+          border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .footer{
+          .font_C2();
+          font-size: 13px;
+          color: #3B3FBD;
+          text-align: center;
+          font-weight: 400;
+          padding-top: 12px;
+        }
+      }
+    }
+  }
+  .noData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 151px;
+    .font_G4();
+    color: rgba(0,0,0,0.3);
+    font-weight: 400;
+    font-size: 14px;
+
+    .img{
+      width: 160px;
+      height: 160px;
+    }
+  }
+}

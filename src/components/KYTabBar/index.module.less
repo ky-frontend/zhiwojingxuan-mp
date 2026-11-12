@@ -1,0 +1,36 @@
+@import url('@/assets/common.less');
+@import url('@/assets/font.less');
+
+.KYTabBar {
+  position: fixed;
+  bottom: 0;
+  width: 375px;
+  height: 49px;
+  padding-bottom: 24px;
+  background-color: #fff;
+  border-top: solid 0.5px #f0f0f0;
+  display: flex;
+  z-index: 1;
+
+  .tab {
+    flex: 1;
+    height: 49px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .text {
+      font-size: 10px;
+      line-height: 14px;
+      padding-top: 2px;
+
+    }
+  }
+}

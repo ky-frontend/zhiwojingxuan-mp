@@ -1,0 +1,21 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "mini-program2",
+  "description": "知我心理",
+  "appid": "wx722d5fe3d9f5f963",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": false,
+    "minified": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": true
+  },
+  "compileType": "miniprogram"
+}

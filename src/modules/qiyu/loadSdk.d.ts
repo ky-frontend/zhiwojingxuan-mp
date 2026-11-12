@@ -1,0 +1,1 @@
+export declare const loadSdk = () => Promise<void>;

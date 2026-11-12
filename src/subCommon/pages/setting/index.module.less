@@ -1,0 +1,47 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.Setting {
+  height: 100vh;
+  overflow-y: auto;
+  background: #fff;
+
+  .envCard {
+    margin: 16px;
+    padding: 16px;
+    background: #f7f8fa;
+    border-radius: 8px;
+
+    .envLabel {
+      .font_C3();
+      opacity: 0.5;
+    }
+
+    .envValue {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .changeENV {
+    margin: 0 16px;
+    height: 44px;
+    border-radius: 8px;
+    background: #6c76db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .changeENVText {
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+
+  .envTip {
+    margin: 16px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+}

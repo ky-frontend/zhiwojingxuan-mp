@@ -1,0 +1,111 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+.retirement{
+  .title{
+    padding: 10px 16px;
+    .font_H5();
+    font-size: 18px;
+    font-weight: bold;
+    color: #446ed5;
+  }
+  .container{
+    margin: 10px 16px 30px;
+    color: rgba(0, 0, 0, 0.8);
+    position: relative;
+
+    .upper{
+      padding-top:10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      border-bottom: 1px solid #e7e6e6;
+
+      .left{
+        .font_C3();
+        font-size: 13px !important;
+      }
+
+      .picker{
+        width: 200px;
+        padding-right: 16px;
+        text-align: right;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 13px !important;
+      }
+      .img{
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .btn{
+      display: flex;
+      font-size: 15px;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      color: #629bdf;
+      width: 150px;
+      border-radius: 4px;
+    }
+    .left{
+      border: 1px solid #276990;
+    }
+    .right{
+      background: #646ed9;
+      color: #fff;
+    }
+  }
+
+  .result{
+    transition: all 2s ease;
+    display: block;
+    margin: 20px 16px 0px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    transform: translate(0,0);
+    opacity: 1;
+    
+    .title{
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(92, 147, 213);
+      text-align: center;
+    }
+    .content{
+      color: #605d5d;
+      padding: 0 20px;
+      .item{
+        padding: 10px 0;
+        position: relative;
+        .inline{
+          position: absolute;
+          right: 0;
+          top: 10px;
+        }
+      }
+    }
+  }
+  .hide{
+    visibility: hidden;
+    transform: translate(0,50);
+    opacity: 0;
+    .content{
+      display: none;}
+  }
+  .text{
+    .font_C3();
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 14px 16px 0;
+  }
+}

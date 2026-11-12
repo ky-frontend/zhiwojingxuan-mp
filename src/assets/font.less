@@ -1,0 +1,149 @@
+@fontFamily: PingFangSC-Regular, PingFang SC;
+
+.fontCommon(@px, @n) when (@n > 13) {
+  letter-spacing: 1px;
+  word-spacing: 0.6px;
+  font-size: @px;
+  font-family: @fontFamily;
+}
+.fontCommon(@px, @n) when (@n <= 13) {
+  letter-spacing: 0.4px;
+  word-spacing: 0.4px;
+  font-size: @px;
+  font-family: @fontFamily;
+}
+.font_H1() {
+  .fontCommon(24px, 24);
+  line-height: 33px;
+}
+.font_H2() {
+  .fontCommon(20px, 20);
+  line-height: 28px;
+}
+.font_H3() {
+  .fontCommon(18px, 18);
+  line-height: 26px;
+}
+.font_H4() {
+  .fontCommon(17px, 17);
+  line-height: 24px;
+}
+.font_H5() {
+  .fontCommon(16px, 16);
+  line-height: 22px;
+}
+.font_H6() {
+  .fontCommon(15px, 15);
+  line-height: 21px;
+}
+.font_C1() {
+  .fontCommon(14px, 14);
+  line-height: 20px;
+}
+.font_C2() {
+  .fontCommon(13px, 13);
+  line-height: 18px;
+}
+.font_C3() {
+  .fontCommon(12px, 12);
+  line-height: 17px;
+}
+.font_N1() {
+  .fontCommon(11px, 11);
+  line-height: 16px;
+}
+.font_N2() {
+  .fontCommon(10px, 10);
+  line-height: 14px;
+}
+.font_N3() {
+  .fontCommon(9px, 9);
+  line-height: 13px;
+}
+.font_L1() {
+  .fontCommon(19px, 19);
+  line-height: 26px;
+}
+.font_L2() {
+  .fontCommon(21px, 21);
+  line-height: 29px;
+}
+.font_L3() {
+  .fontCommon(22px, 22);
+  line-height: 30px;
+}
+.font_L4() {
+  .fontCommon(23px, 23);
+  line-height: 32px;
+}
+.font_P1() {
+  .fontCommon(16px, 16);
+  line-height: 26px;
+}
+.font_P2() {
+  .fontCommon(15px, 15);
+  line-height: 24px;
+}
+.font_P3() {
+  .fontCommon(14px, 14);
+  line-height: 22px;
+}
+.font_P4() {
+  .fontCommon(13px, 13);
+  line-height: 20px;
+}
+.font_P5() {
+  .fontCommon(12px, 12);
+  line-height: 20px;
+}
+.font_G1() {
+  .fontCommon(11px, 11);
+  line-height: 18px;
+}
+.font_G2() {
+  .fontCommon(12px, 12);
+  line-height: 22px;
+}
+.font_G3() {
+  .fontCommon(13px, 13);
+  line-height: 24px;
+}
+.font_G4() {
+  .fontCommon(14px, 14);
+  line-height: 26px;
+}
+.font_G5() {
+  .fontCommon(15px, 15);
+  line-height: 28px;
+}
+
+
+
+// 设置富文本字号
+font[size="1"] {
+  font-size: 12px;
+}
+
+font[size="2"] {
+  font-size: 13px;
+}
+
+font[size="3"] {
+  font-size: 14px;
+}
+
+font[size="4"] {
+  font-size: 16px;
+}
+
+font[size="5"] {
+  font-size: 17px;
+}
+
+font[size="6"] {
+  font-size: 24px;
+}
+
+font[size="7"] {
+  font-size: 36px;
+}

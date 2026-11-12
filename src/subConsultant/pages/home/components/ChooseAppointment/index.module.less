@@ -1,0 +1,222 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.chooseAppointment {
+  margin-bottom: 81px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+
+  .top {
+    .topTitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+      margin-left: 17px;
+
+      .time {
+        .font_H6();
+
+        font-weight: bold;
+      }
+
+      .bjsj {
+        .font_N1();
+
+        color: rgb(0 0 0 / 0.2);
+      }
+    }
+
+    .topSeper {
+      width: 20px;
+      height: 2px;
+      margin-top: 9px;
+      margin-left: 40px;
+      background-color: #000;
+    }
+  }
+
+  .content {
+    background-color: #f9f9f9;
+
+    .daysRow {
+      display: flex;
+      flex-direction: row;
+      padding-right: 8px;
+      padding-left: 8px;
+      margin-top: 20px;
+      overflow-x: scroll;
+      white-space: nowrap;
+      .hideScrollbar;
+
+      .daysItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 8px;
+
+        .topItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #fff;
+          border-radius: 2px;
+
+          .week {
+            align-items: center;
+            margin-top: 6px;
+            color: rgb(0 0 0 / 0.3);
+            .font_N2();
+          }
+
+          .day {
+            align-items: center;
+            margin: 3px 14px 6px;
+            font-size: 13px;
+            color: rgb(0 0 0 / 0.3) !important;
+          }
+        }
+
+        .topItemSelcted {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #000;
+          border-radius: 2px;
+
+          .week {
+            align-items: center;
+            margin-top: 6px;
+            color: #fff;
+            .font_N2();
+          }
+
+          .day {
+            align-items: center;
+            margin: 3px 14px 6px;
+            font-size: 13px;
+            color: #fff !important;
+          }
+        }
+
+        .rest {
+          .font_N2();
+
+          margin-top: 2px;
+          margin-bottom: 20px;
+          color: rgb(0 0 0 / 0.3);
+        }
+
+        .left {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 2px;
+          margin-bottom: 20px;
+          color: rgb(0 0 0 / 0.7);
+          .font_N2();
+
+          .leftCount {
+            color: rgb(59 63 189 / 1);
+          }
+        }
+      }
+    }
+
+    .daysline {
+      height: 1px;
+      margin-right: 16px;
+      margin-left: 16px;
+      background-color: rgb(0 0 0 / 0.06);
+    }
+
+    .hours {
+      margin-top: 16px;
+
+      .hoursEmpty {
+        .font_H6();
+
+        margin-top: 12px;
+        margin-left: 16px;
+        color: rgb(0 0 0 / 0.3);
+      }
+
+      .hoursHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 12px;
+        margin-left: 16px;
+
+        .headerIcon {
+          width: 17px;
+          height: 17px;
+        }
+
+        .headerTitle {
+          .font_C3();
+
+          margin-left: 4px;
+          font-weight: bold;
+          color: rgb(0 0 0 / 1);
+        }
+      }
+
+      .hourContent {
+        padding-right: 6px;
+        padding-left: 6px;
+        margin-top: 10px; //10px
+
+        .timeNormal {
+          display: inline-block;
+          padding: 9px 12px;
+          margin-bottom: 16px;
+          margin-left: 10px;
+          color: #000;
+          background-color: #fff;
+          border-radius: 2px;
+          .font_C2();
+        }
+
+        .timeSelected {
+          display: inline-block;
+          padding: 9px 12px;
+          margin-bottom: 16px;
+          margin-left: 10px;
+          color: #fff;
+          background-color: rgb(0 0 0 / 0.9);
+          border-radius: 2px;
+          .font_C2();
+        }
+
+        .timeDisable {
+          display: inline-block;
+          padding: 9px 10px;
+          margin-bottom: 12px;
+          margin-left: 10px;
+          color: rgb(0 0 0 / 0.3);
+          background-color: #fff;
+          border-radius: 2px;
+          .font_C2();
+        }
+      }
+    }
+  }
+}
+
+.bottomBtn {
+  position: fixed;
+  right: 16px;
+  bottom: 30px;
+  left: 16px;
+  height: 44px;
+  .safeAreaInsetBottom;
+
+  padding-top: 11px;
+  // padding-bottom: 11px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(0 0 0 / 0.9);
+  .font_H5();
+}

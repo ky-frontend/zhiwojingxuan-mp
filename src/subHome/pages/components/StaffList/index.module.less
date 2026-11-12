@@ -1,0 +1,200 @@
+@import url('@/assets/font.less');
+@import url('@/assets/common.less');
+
+.pages {
+  .index {
+    border-bottom: 10px solid #e9ebff;
+    background-color: #f2f5fd !important;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20px;
+      padding: 12px 20px 4px;
+
+      .t {
+        .font_H3();
+        font-size: 17px;
+        color: #6C76DB;
+        font-weight: bold;
+      }
+
+      .m {
+        display: flex;
+        align-items: center;
+        color: #A1A8B0;
+        font-size: 14px;
+
+        .img {
+          display: flex;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+    }
+
+
+    .list {
+      white-space: nowrap;
+      overflow-x: scroll;
+      .hideScrollbar();
+    }
+
+    .card {
+      flex-direction: column;
+      width: 132px;
+      height: 142px;
+      box-sizing: border-box;
+      padding: 0px 12px 0;
+      box-shadow: 2px 2px 7px #E3E4F180;
+      width: 130px;
+      display: inline-block;
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 8px 0 20px;
+      margin-left: 16px;
+      overflow: hidden;
+
+
+      .info {
+        width: 100%;
+        padding-bottom: 8px;
+        display: flex;
+        height: 60px;
+
+        .left {
+          width: 46px;
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+
+          .avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 100%
+          }
+        }
+
+
+
+
+        .right {
+          width: calc(100% - 46px);
+          overflow: hidden;
+          word-break: break-all;
+          text-overflow: ellipsis;
+          position: relative;
+          height: 100%;
+
+          .t {
+            color: #616bd6;
+            font-size: 9px;
+            text-align: right
+          }
+
+          .name {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: right;
+            width: 62px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+            padding-top: 15px;
+          }
+
+          .count {
+            text-align: right;
+            font-size: 8px;
+            color: rgba(0, 0, 0, .6);
+            transform: scale(0.90);
+
+            .p {
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+        }
+
+      }
+
+      .tag {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4px;
+        height: calc(100% - 60px - 8px - 38px);
+        border-bottom: 1px solid #f2f4f5;
+        overflow: hidden;
+
+        color: #616bd6;
+        font-size: 10px;
+
+        .tagText {
+          background-color: #f6f7ff;
+          padding: 2px 4px;
+          word-break: keep-all;
+          height: 18px;
+          margin: 1px 0;
+          box-sizing: border-box;
+        }
+
+      }
+
+      // .tag::after {
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 3px;
+      //   content: '个人简介>';
+      //   display: block;
+      //   background-color: #fff;
+      //   padding: 3px 0;
+      //   padding-left: 4px;
+      // }
+
+      .b {
+        height: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 8px;
+
+        .price {
+          display: flex;
+          align-items: center;
+          color: #F85E49;
+
+          .unit {
+            margin-left: 2px;
+            color: rgba(0, 0, 0, .6);
+            font-size: 10px;
+          }
+        }
+
+        .t {
+          color: rgba(0, 0, 0, .6);
+          font-size: 10px;
+        }
+      }
+    }
+
+    .card:first-child {
+      margin-left: 20px;
+    }
+
+    .card:last-child {
+      margin-right: 20px;
+    }
+  }
+
+  .index:first-child {
+    background-color: linear-gradient(to bottom, #cbcaff, #f2f5fd);
+  }
+
+  .index:last-child {
+    border-bottom: 80px solid #e9ebff;
+  }
+}

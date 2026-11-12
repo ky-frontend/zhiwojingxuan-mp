@@ -1,0 +1,196 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.Message {
+  height: 100vh;
+  overflow-y: auto;
+  background: #fff;
+
+  .msg_navBg {
+    background-color: #ffffff;
+  }
+  .title{
+    position: fixed;
+    .font_H2();
+    top: 0;
+    left: 16px;
+    font-size: 20px;
+    color: #000000;
+    z-index: 111;
+    font-weight: bold;
+  }
+
+  // 空状态
+  .empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+
+    .img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .txt1 {
+      .font_G4();
+      opacity: .4;
+    }
+
+    .txt2 {
+      .font_G4();
+      opacity: .2;
+    }
+
+    .txt3 {
+      width: 120px;
+      height: 36px;
+      border: 1px solid rgba(59, 63, 189, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 18px;
+
+      .txt {
+        .font_C1();
+        color: #3B3FBD;
+      }
+    }
+  }
+
+
+  .msg_wrapper {
+    padding-bottom: 120px;
+
+    .msg_wrapper_item {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      box-sizing: border-box;
+      // width: 375px;
+      height: 74px;
+      background: #ffffff;
+
+      .msg_wrapper_item_l {
+        position: relative;
+        width: 92rpx;
+        height: 92rpx;
+        margin-right: 12px;
+
+        .icon {
+          width: 46px;
+          height: $width;
+          border-radius: 50%;
+        }
+      }
+
+      .icon_zixunshi::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url('https://cdn-public.knowyourself.cc/icon/zxs/icon_zixunshi_001.png');
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+      }
+
+      .icon_liaoyushi::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url('https://cdn-public.knowyourself.cc/icon/liaoyu/liaoyushi_icon.png');
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+      }
+
+      .msg_wrapper_item_r {
+        width: 283px;
+
+        .msg_wrapper_item_r_top {
+          display: flex;
+          justify-content: space-between;
+
+          .msg_wrapper_item_r_top_l {
+            display: flex;
+            align-items: center;
+
+            .name {
+              .font_H6();
+              font-weight: 400;
+            }
+
+            .dot {
+              width: 3px;
+              height: 3px;
+              background: #f58b00;
+              margin-left: 4px;
+              margin-right: 4px;
+
+              &.leave {
+                background: rgba(0, 0, 0, 0.4);
+              }
+            }
+
+
+            .dot_txt {
+              font-size: 12px;
+              font-weight: 400;
+              color: #3b3fbd;
+              line-height: 17px;
+              .font_C3();
+            }
+          }
+
+          .time {
+            .font_N1();
+            font-weight: 400;
+            opacity: 0.4;
+          }
+        }
+
+        .msg_wrapper_item_r_bottom {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+
+          .msg_wrapper_item_r_bottom_l {
+            .font_P4();
+            opacity: 0.4;
+            margin-top: 5px;
+            font-weight: 400;
+            line-height: 18px;
+            .ellipsis(1);
+          }
+
+          .msg_wrapper_item_r_bottom_r {
+            box-sizing: border-box;
+            margin-top: 5px;
+            background: #f85d48;
+            max-width: 25px;
+            min-width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+            align-items: center;
+
+            .msg_wrapper_item_r_bottom_r_txt {
+              .font_G1();
+              font-weight: 500;
+              color: #ffffff;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+
+
+.item {
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  display: flex;
+  width: 100%;
+
+  .left {
+    margin-right: 8px;
+    position: relative;
+
+    .avatar {
+      width: 60px;
+      height: 80px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .state1 {
+      font-size: 9px;
+      width: 36px;
+      text-align: center;
+      line-height: 14px;
+      border-radius: 7px;
+      position: absolute;
+      left: 50%;
+      top: 80px;
+      transform: translate(-50%, -50%);
+      color: #ce8122;
+      background: #fff4e5;
+    }
+
+    .state2 {
+      color: #383ca9;
+      background: #ebedff;
+    }
+
+    .state3 {
+      color: rgba(0, 0, 0, 0.4);
+      background: #f7f7f7;
+    }
+
+  }
+
+  .right {
+    flex: 1;
+    flex-wrap: wrap;
+
+    .name {
+      .font_H3();
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .count {
+      color: rgba(0, 0, 0, .5);
+      margin: 2px 0;
+      font-size: 10px;
+    }
+
+    .tags {
+      margin: 4px 0;
+      display: flex;
+      align-items: center;
+
+      .tag {
+        background: #eef0fc;
+        color: #5B5D8E;
+        padding: 2px 4px;
+        margin-right: 6px;
+        font-size: 10px;
+      }
+    }
+
+    .desc {
+      .font_P5();
+      font-size: 12px;
+
+      opacity: 0.8;
+      margin-top: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 19px;
+      -webkit-line-clamp: 3; //多行在这里修改数字即可
+      overflow: hidden;
+      /*! autoprefixer: ignore next */
+      -webkit-box-orient: vertical;
+    }
+
+    .p {
+      font-size: 12px;
+      color: #6C75DB;
+
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .price {
+        font-size: 12px;
+        display: flex;
+
+        .priceText {
+          margin-right: 5px;
+
+          .t1 {
+            margin-left: 2px;
+            color: #F85D48;
+          }
+
+          .t2 {
+            color: rgba(0, 0, 0, .5);
+            margin-left: 1px;
+          }
+        }
+      }
+
+
+      .b {
+        width: 66px;
+        height: 22px;
+        background-color: #646ED9;
+        color: #fff;
+        border-radius: 10px;
+        line-height: 22px;
+        text-align: center;
+        font-size: 11px;
+      }
+    }
+  }
+}

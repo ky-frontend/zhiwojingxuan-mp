@@ -1,0 +1,407 @@
+@import url('@/assets/common.less');
+@import url('@/assets/font.less');
+
+.CounsellingIndexPage {
+  width: 100%;
+
+
+  .tipsView {
+    width: 375px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    .i1,
+    .i2 {
+      width: 26px;
+      height: $width;
+      margin-right: 16px;
+    }
+
+    .p {
+      font-size: 13px;
+      margin-left: 16px;
+      flex: 1;
+    }
+  }
+
+  // 储值卡
+  .storageCard {
+    height: 48px;
+    background: #f7f7f7;
+    padding: 0px 16px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .img {
+        width: 132px;
+        height: 16px;
+      }
+
+      .line {
+        width: 1px;
+        height: 12px;
+        background-color: #000;
+        margin-left: 6px;
+      }
+
+      .txt {
+        .font_C3();
+        color: rgba(0, 0, 0, 0.7);
+        padding-left: 6px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .amount_txt {
+        .font_C3();
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .amount {
+        display: flex;
+        align-items: flex-end;
+
+        .symbol {
+          font-family: 'PingFangTC, PingFangTC';
+          font-weight: bolder;
+          font-size: 11px;
+          line-height: 16px;
+          text-align: left;
+          font-style: normal;
+          margin-right: 1px;
+        }
+
+        .money {
+          font-family: 'Repair, Repair';
+          font-weight: bolder;
+          font-size: 15px;
+          line-height: 17px;
+          letter-spacing: 1px;
+          text-align: left;
+          font-style: normal;
+        }
+      }
+    }
+  }
+
+  // 空状态
+  .empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+
+    .img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .txt {
+      .font_G4();
+      opacity: 0.3;
+    }
+  }
+
+  .doctorList {
+    min-height: 100vh;
+    padding-bottom: 120px;
+
+    .lysCell {
+      width: 343px;
+      margin: auto;
+      padding: 20px 0 24px;
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      position: relative;
+
+      .lysCellLeft {
+        position: relative;
+        width: 48px;
+        height: 48px;
+
+        .avatar {
+          width: 46px;
+          height: 46px;
+          border-radius: 6px;
+        }
+
+        .state1 {
+          font-size: 9px;
+          width: 36px;
+          text-align: center;
+          line-height: 14px;
+          border-radius: 7px;
+          position: absolute;
+          bottom: -6px;
+          left: 7px;
+          color: #ce8122;
+          background: #fff4e5;
+        }
+
+        .state2 {
+          color: #383ca9;
+          background: #ebedff;
+        }
+
+        .state3 {
+          color: rgba(0, 0, 0, 0.4);
+          background: #f7f7f7;
+        }
+      }
+
+      .lysCellRight {
+        margin-left: 12px;
+
+        .nickview {
+          display: flex;
+          align-items: center;
+
+          .nick {
+            .font_H5();
+            font-weight: bold;
+          }
+
+          .tag {
+            width: 15px;
+            height: $width;
+            margin-left: 2px;
+          }
+
+          .num {
+            margin-left: 12px;
+            .font_C3();
+            opacity: 0.4;
+          }
+        }
+
+        .tagsview {
+          margin-top: 4px;
+          width: 283px;
+          .ellipsis(1);
+
+          .tag {
+            .font_N1();
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.6);
+            line-height: 18px;
+            margin-left: 6px;
+            background-color: #f2f3f8;
+            padding: 0 4px;
+            border-radius: 2px;
+          }
+
+          .tag:first-child {
+            margin-left: 0;
+          }
+        }
+
+        .desc {
+          margin-top: 8px;
+          .font_P5();
+          opacity: 0.8;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; //多行在这里修改数字即可
+          overflow: hidden;
+          /*! autoprefixer: ignore next */
+          -webkit-box-orient: vertical;
+          font-size: 13px;
+        }
+
+        .priceview {
+          margin-top: 12px;
+          display: flex;
+          align-items: center;
+          .font_C2();
+
+          .p1 {
+            opacity: 0.8;
+          }
+
+          .price {
+            .font_C2;
+            // padding-top: 2px;
+            padding-left: 0.5px;
+            padding-right: 0.5px;
+          }
+
+          .padd {
+            margin-left: 16px;
+          }
+
+          .btn {
+            .font_N2();
+            opacity: 0.4;
+            padding-top: 0.5px;
+          }
+
+          .xianshi {
+            width: 24px;
+            height: 14px;
+            margin-left: 2px;
+            background: #ffe0dc;
+            .font_N3();
+            line-height: 14px;
+            text-align: center;
+            color: #f85d48;
+          }
+        }
+
+        .coupon {
+          margin-top: 8px;
+          display: flex;
+
+          .p1 {
+            font-size: 10px;
+            color: #f85d48;
+            opacity: 0.8;
+            background: #ffe0dc;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #ffe0dc;
+            text-align: center;
+            line-height: 15px;
+          }
+
+          .p2 {
+            .font_N2();
+            line-height: 15px;
+            padding: 0 4px;
+            border: 1px solid #ffe0dc;
+            // width: 50px;
+            text-align: center;
+            color: #f85d48;
+          }
+        }
+      }
+
+      .cellBtn1 {
+        width: 67px;
+        height: 26px;
+        border-radius: 14px;
+        background: #646ed9;
+        border: 1px solid #646ed9;
+        .font_N1();
+        color: #fff;
+        line-height: 28px;
+        text-align: center;
+        position: absolute;
+        bottom: 16px;
+        right: 0;
+      }
+
+      .cellBtn2 {
+        width: 67px;
+        height: 26px;
+        border-radius: 14px;
+        background: #fff;
+        border: 1px solid #d4d4d4;
+        .font_N1();
+        line-height: 28px;
+        text-align: center;
+        position: absolute;
+        bottom: 16px;
+        right: 0;
+      }
+    }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+
+    .content {
+      position: relative;
+      width: 304px;
+      margin: 156px auto 0;
+      height: 420px;
+
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .btn {
+        position: absolute;
+        width: 145px;
+        height: 34px;
+        border-radius: 22px;
+        bottom: 82px;
+        left: 80px;
+        font-size: 15px;
+        text-align: center;
+        line-height: 44px !important;
+        .font_H6();
+      }
+
+
+    }
+
+    .close {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 30px auto 0;
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  .adBoxes {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+
+    .ad {
+      height: 300px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 6px;
+      margin: 0 42px;
+      position: relative;
+
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

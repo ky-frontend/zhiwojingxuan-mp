@@ -1,0 +1,237 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+.shaixuanView {
+  width: 375px;
+  height: 44px;
+  .shaixuanFixed {
+    width: 375px;
+    height: 44px;
+    border-bottom: 0.5px solid #fff;
+    background: #fff;
+    position: relative;
+    .shaixuanFixedBtn {
+      width: 375px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .cellBtn {
+      display: flex;
+      align-items: center;
+      width: 25%;
+      justify-content: center;
+      .icon {
+        width: 20px;
+        height: $width;
+        margin-right: -4px;
+      }
+      .p {
+
+        .font_C2();
+        opacity: 0.5;
+        max-width: 76px;
+        line-height: 44px;
+        height: 44px;
+        .ellipsis(1);
+      }
+      .pAC {
+        color: #3B3FBD;
+        opacity: 1;
+      }
+      .pAB {
+        opacity: 1;
+      }
+    }
+
+    .shaoxuankuang {
+      position: absolute;
+      top: 44px;
+      left: 0;
+      z-index: 101;
+      width: 375px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .sCV {
+    width: 375px;
+    background: #fff;
+    .sCVScroll {
+      width: 100%;
+      height: 310px;
+      .title_p {
+        .font_C3();
+        opacity: 0.5;
+        padding-left: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        .t {
+          .font_N1();
+          opacity: 0.3;
+        }
+      }
+      
+
+    }
+    .empty {
+      height: 16px;
+    }
+    .do {
+      padding: 0 16px 8px;
+      .p1 {
+        .font_C3();
+        opacity: 0.5;
+        padding-bottom: 8px;
+        .t {
+          .font_N1();
+          opacity: 0.3;
+        }
+      }
+      .p2 {
+        .font_N1();
+        opacity: 0.3;
+
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        .tag {
+          // display: inline-block;
+          margin-right: 10px;
+          margin-bottom: 12px;
+        }
+        .tag:nth-child(4n) {
+          margin-right: 0;
+        }
+      }
+    }
+    .do {
+      padding-bottom: 20px;
+    }
+    .resetAndConfirmView {
+      width: 375px;
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 16px 20px;
+      box-sizing: border-box;
+      .reset {
+        .font_C1();
+        width: 166px;
+        height: 36px;
+        background: #F5F5F5;
+        line-height: 36px;
+        text-align: center;
+      }
+      .confirm {
+        .font_C1();
+        width: 166px;
+        height: 36px;
+        background: #000;
+        line-height: 36px;
+        text-align: center;
+        color: #fff;
+      }
+    }
+    .hdays {
+      width: 100%;
+      .list {
+        white-space: nowrap;
+        
+        .cell {
+          display: inline-block;
+          width: 46px;
+          height: 80px;
+          margin-left: 10px;
+          text-align: center;
+          .p1 {
+            .font_N2();
+            opacity: 0.3;
+            padding-bottom: 4px;
+          }
+          .state {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 10px;
+            padding-top: 4px;
+            box-sizing: border-box;
+            position: relative;
+            .p2 {
+              font-size: 20px;
+              line-height: 23px;
+              position: relative;
+            }
+            .p3 {
+              .font_N1();
+              position: relative;
+            }
+            .p4 {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0px;
+              height: 46px;
+              background: #EFF0FB;
+              transition: all 0.3s;
+            }
+          }
+          .stateAc {
+            
+            .p2 {
+              color: #3B3FBD;
+            }
+            .p3 {
+              color: #3B3FBD;
+            }
+            .p4 {
+              width: 46px;
+            }
+          }
+        }
+        .cell:first-child {
+          margin-left: 16px;
+        }
+        .cell:last-child {
+          margin-right: 16px;
+        }
+      }
+    }
+    .priceslist {
+      padding: 10px 0 14px 0;
+      .price {
+        .font_C1();
+        line-height: 44px;
+        text-align: center;
+      }
+      .priceAc {
+        color: #3B3FBD;
+      }
+    }
+  }
+}
+
+.SelectBtn {
+  .font_C1();
+  opacity: 0.8;
+  // width: 78px;
+  min-width: 78px;
+  height: 32px;
+  background: #f7f7f7;
+  text-align: center;
+  line-height: 32px;
+  position: relative;
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(100,110,217,0.1);
+    width: 0;
+    height: 100%;
+    transition: all 0.3s;
+  }
+}
+.SelectBtnTag {
+  color: #3B3FBD;
+  .content {
+    width: 100%;
+  }
+}

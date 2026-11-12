@@ -1,0 +1,163 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.search {
+  height: 100vh;
+  overflow-y: auto;
+  background: #fff;
+
+  .search_input {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding: 15px 20px 15px 22px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    // position: relative;
+    position: fixed;
+    /* 修改这里 */
+    top: 95;
+    /* 47  + 48  */
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /* 确保搜索框位于其他内容上方 */
+
+    .search_input_icon {
+      width: 20px;
+      height: $width;
+      margin-right: 10px;
+    }
+
+    .search_input_form {
+      position: relative;
+      flex: 1;
+    }
+
+    .input {
+      .font_C1();
+
+      --font-size: 14px;
+
+      // padding: 10px 0;
+      line-height: 24px;
+      flex: 1;
+      width: 230px;
+    }
+
+    .search_input_close {
+      width: 18px;
+      height: $width;
+      position: absolute;
+      right: 18px;
+      top: 2px;
+    }
+
+    .search_input_txt {
+      .font_C1();
+      font-weight: 400;
+    }
+  }
+
+  // 历史记录
+  .search_history {
+    // padding: 16px 20px 0 20px;
+    padding: 66px 20px 0 20px; // 16px + 50px(搜索框的高度)
+
+    .search_history_top {
+      display: flex;
+      justify-content: space-between;
+
+      .search_history_top_txt {
+        .font_P3();
+        font-weight: 400;
+      }
+
+      .search_history_top_icon {
+        width: 20px;
+        height: $width;
+      }
+    }
+
+    .search_history_bottom {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .search_history_bottom_tag {
+        .font_C2();
+        font-weight: 400;
+        padding: 6px 9px;
+        background: rgba(245, 245, 245, 1);
+        margin-right: 12px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  // 搜索内容
+  .search_scroll_wrapper {
+    // padding: 0px 16px;
+    padding: 50px 16px 0 16px;
+
+    .search_scroll {
+      display: flex;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 20px 0;
+      align-items: center;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      .search_scroll_r {
+        .search_scroll_r_top {
+          display: flex;
+
+          .search_scroll_r_top_txt {
+            .font_C1();
+            font-weight: 400;
+            margin-right: 6px;
+          }
+
+          .search_scroll_r_top_tag {
+            width: 50px;
+            height: 14px;
+            background: #EFF0FA;
+            border-radius: 9px;
+            padding: 1px 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .tag {
+              width: 12px;
+              height: $width;
+              margin-right: 2px;
+            }
+
+            .font_N2();
+            font-weight: 400;
+            color: #3B3FBD;
+          }
+
+          .search_scroll_r_top_tag_zixunshi {
+            background: #FAF1EF;
+            color: #EB7258;
+          }
+        }
+
+        .search_scroll_r_bottom {
+          .font_C3();
+          font-weight: 400;
+          opacity: .4;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+
+}
