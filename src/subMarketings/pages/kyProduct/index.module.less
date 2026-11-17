@@ -1,0 +1,132 @@
+@import '@/assets/common.less';
+@import '@/assets/font.less';
+
+.index {
+  background-color: #fff;
+
+  .nav {
+    background-color: #ededed;
+  }
+
+  .header {
+    width: 100%;
+    border-bottom: 10px solid #f5f6f8;
+
+    .img {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .info {
+      background: #fff;
+      padding: 22px 16px;
+
+      .title {
+        .font_H5();
+        font-size: 16px;
+        padding-bottom: 4px;
+      }
+
+      .desc {
+        color: rgba(0, 0, 0, 0.4);
+        .font_C3();
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+
+      .price {
+        .flag {
+          font-size: 18px;
+          width: 7px;
+          margin-right: 1px;
+          color: #af1818;
+        }
+
+        &.hidden {
+          display: none;
+        }
+
+        .priceNum {
+          font-size: 24px;
+          margin-right: 4px;
+        }
+
+        .delPrice {
+          color: #c6c6c6;
+          font-size: 16px;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+
+  .detail {
+    padding: 10px 16px 90px;
+    background: #fff;
+
+    .title {
+      .font_C3();
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
+      padding-bottom: 8px;
+    }
+  }
+
+  .btn {
+    position: fixed;
+    width: 100%;
+    height: 88px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+
+    .share {
+      position: relative;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 10px;
+      margin: 14px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .shareBtn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: none;
+      }
+
+      .shareImg {
+        width: 26px;
+        height: 26px;
+        padding: 4px;
+      }
+    }
+
+    .btnText {
+      margin-top: 18px;
+      background-color: #1a1a1a;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      border-radius: 3px;
+      width: 280px;
+      font-weight: bold;
+      height: 40px;
+
+      &.hidden {
+        display: none;
+      }
+
+      &.btnTextDisabled {
+        background-color: #c6c6c6;
+        color: rgb(255 255 255 / 0.8);
+      }
+    }
+  }
+}

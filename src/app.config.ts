@@ -63,6 +63,11 @@ export default defineAppConfig({
       root: 'subPay',
       pages: ['pages/appPay/index'],
     },
+    {
+      // 二期：短链落地卖课（默认隐藏支付，open=1 才展示）
+      root: 'subMarketings',
+      pages: ['pages/kyProduct/index'],
+    },
   ],
   window: {
     navigationBarTextStyle: 'black',

@@ -17,6 +17,7 @@ import {
   coachApi,
   consultantApi,
   counsellingApi,
+  courseApi,
   marketingApi,
   orderApi,
   paymentApi,
@@ -296,6 +297,16 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
           };
           break;
         }
+        case AppKeyTypeEnum.External: {
+          // KY 课（短链卖课）
+          productInfo.productId = productInfo.productInfo.id;
+          productInfo.image = productInfo.productInfo.headImage;
+          productInfo.originPrice = productInfo.skuInfo.referencePrice;
+          paymentAmount = productInfo.skuInfo.price;
+          productInfo.name = productInfo.productInfo.name;
+          productInfo._skuInfo = productInfo.skuInfo || {};
+          break;
+        }
       }
       this.setState({
         productInfo,
@@ -361,6 +372,13 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
     } else if (appKey === 'coach') {
       res = await coachApi.getProductInfo(productId);
       // 教练
+    } else if (
+      appKey === AppKeyTypeEnum.External ||
+      appKey === AppKeyEnum.External ||
+      appItemKey === AppItemKeyTypeEnum.Course
+    ) {
+      // KY 课
+      res = await courseApi.getKYProductDetail(productId);
     }
     return res;
   }
@@ -623,6 +641,38 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
         },
         ...this.sourceParams,
       };
+    } else if (
+      productInfo.appKey === AppKeyTypeEnum.External ||
+      productInfo.appKey === AppKeyEnum.External ||
+      productInfo.appItemKey === AppItemKeyTypeEnum.Course
+    ) {
+      // KY 课
+      params = {
+        marketingPolicy: [],
+        orderSource: '1',
+        items: [
+          {
+            productDetail: {
+              appKey: productInfo.appKey,
+              appItemKey: productInfo.appItemKey,
+              appName: productInfo.name || '',
+              productId: productInfo.productId,
+              image: productInfo.image,
+            },
+            skuId: productInfo._skuInfo.skuId,
+            skuPrice: productInfo._skuInfo.price,
+            skuCount: 1,
+            relationId: '',
+          },
+        ],
+        paymentInfo: paymentInfoArr,
+        extra: {
+          productId: productInfo.productId,
+          productName: productInfo.name,
+          ...this.state.extra,
+        },
+        ...this.sourceParams,
+      };
     }
 
     // 支付按钮加锁
@@ -687,6 +737,16 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
           extra.productId +
           '&coachId=' +
           extra.coachId,
+      });
+    } else if (
+      appKey === AppKeyTypeEnum.External ||
+      appKey === AppKeyEnum.External ||
+      appItemKey === AppItemKeyTypeEnum.Course
+    ) {
+      const productId =
+        this.state.productInfo?.productId || this.confirmOrderInfoData.productId || '';
+      Taro.redirectTo({
+        url: `/subCommon/pages/payResult/index?type=course&Id=${productId}`,
       });
     }
   }
@@ -901,6 +961,12 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
       }
     } else if (productInfo.appKey === 'coach') {
       return productInfo.outName;
+    } else if (
+      productInfo.appKey === AppKeyTypeEnum.External ||
+      productInfo.appKey === AppKeyEnum.External ||
+      productInfo.appItemKey === AppItemKeyTypeEnum.Course
+    ) {
+      return productInfo.name || '';
     }
   };
 
@@ -911,6 +977,12 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
       return `¥${formatPrice(productInfo.originPrice)}`;
     } else if (productInfo.appKey === 'coach') {
       return `¥${formatPrice(productInfo.originPrice)}`;
+    } else if (
+      productInfo.appKey === AppKeyTypeEnum.External ||
+      productInfo.appKey === AppKeyEnum.External ||
+      productInfo.appItemKey === AppItemKeyTypeEnum.Course
+    ) {
+      return `¥${formatPrice(paymentAmount || productInfo.originPrice)}`;
     } else {
       // const price = this.state.useCoupon
       //   ? this.confirmOrderInfoData.selectProduct.money
@@ -918,6 +990,17 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
       const price = this.confirmOrderInfoData.selectProduct.money;
       return `¥${formatPrice(price)}`;
     }
+  };
+
+  isCourseOrder = () => {
+    const { productInfo } = this.state;
+    const appKey = productInfo?.appKey || this.confirmOrderInfoData?.appKey;
+    const appItemKey = productInfo?.appItemKey || this.confirmOrderInfoData?.appItemKey;
+    return (
+      appKey === AppKeyTypeEnum.External ||
+      appKey === AppKeyEnum.External ||
+      appItemKey === AppItemKeyTypeEnum.Course
+    );
   };
 
   // 因为优惠充时卡可以享受折扣，但是不能使用优惠卷，所以这里需要区分带过来的价格是折扣还是优惠
@@ -1071,7 +1154,7 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
             />
           </View>
 
-          {balance > 0 && productInfo?.appKey !== 'coach' ? (
+          {balance > 0 && productInfo?.appKey !== 'coach' && !this.isCourseOrder() ? (
             <View>
               <View
                 className={classNames({
@@ -1189,48 +1272,45 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
 
         {/* 底部 */}
         <View className={styles.bottom}>
-          {/* 同意书 */}
-          <View className={styles.agree}>
-            {isAgree ? (
-              <Image
-                src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/common/radio_checked_icon.png"
-                className={styles.you}
-                onClick={() => {
-                  this.setState({
-                    isAgree: !isAgree,
-                  });
-                }}
-              />
-            ) : (
-              <Image
-                src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/common/radio_unchecked_icon.png"
-                className={styles.empty}
-                onClick={() => {
-                  this.setState({
-                    isAgree: !isAgree,
-                  });
-                }}
-              />
-            )}
-            {productInfo ? (
-              <Text
-                className={styles.txt}
-                onClick={() => {
-                  if (protocolInfo) {
-                    // Taro.navigateTo({
-                    //   url: `/subWebview/pages/md/index?protocolId=${protocolInfo.protocolId}`,
-                    // });
+          {/* 同意书：课订单不展示协议勾选 */}
+          {!this.isCourseOrder() ? (
+            <View className={styles.agree}>
+              {isAgree ? (
+                <Image
+                  src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/common/radio_checked_icon.png"
+                  className={styles.you}
+                  onClick={() => {
+                    this.setState({
+                      isAgree: !isAgree,
+                    });
+                  }}
+                />
+              ) : (
+                <Image
+                  src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/common/radio_unchecked_icon.png"
+                  className={styles.empty}
+                  onClick={() => {
+                    this.setState({
+                      isAgree: !isAgree,
+                    });
+                  }}
+                />
+              )}
+              {productInfo && protocolInfo ? (
+                <Text
+                  className={styles.txt}
+                  onClick={() => {
                     navigateTo(`/subWebview/pages/md/index`, {
                       protocolId: protocolInfo.protocolId,
                     });
-                  }
-                }}
-              >
-                我同意
-                <Text className={styles.txtLink}>{protocolInfo.text}</Text>
-              </Text>
-            ) : null}
-          </View>
+                  }}
+                >
+                  我同意
+                  <Text className={styles.txtLink}>{protocolInfo.text}</Text>
+                </Text>
+              ) : null}
+            </View>
+          ) : null}
           {productInfo ? (
             <View className={styles.btn_wrapper}>
               <View className={styles.bottom_l}>

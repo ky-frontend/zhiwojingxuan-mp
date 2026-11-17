@@ -31,7 +31,7 @@ class Index extends BaseKyComponent<Props, States> {
           <View className={styles.text}>支付成功</View>
         </View>
         <View className={styles.info}>
-          <image show-menu-by-longpress src={serviceImg} className={styles.img} />
+          <Image showMenuByLongpress src={serviceImg} className={styles.img} />
           <View className={styles.text}>{serviceText}</View>
         </View>
       </View>

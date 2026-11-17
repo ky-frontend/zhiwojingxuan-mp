@@ -19,6 +19,7 @@ import WalletApi from './wallet.api';
 import ChannelApi from './channel.api';
 import CoachApi from './coach.api';
 import HomeApi from './home.api';
+import CourseApi from './course.api';
 
 // const env = Taro.getStorageSync('ENV');
 
@@ -79,6 +80,7 @@ const notificationApi = new Notification(gateway);
 const channelApi = new ChannelApi(gateway);
 const coachApi = new CoachApi(gateway);
 const homeApi = new HomeApi(gateway);
+const courseApi = new CourseApi(gateway);
 
 export {
   userApi,
@@ -95,4 +97,5 @@ export {
   channelApi,
   coachApi,
   homeApi,
+  courseApi,
 };

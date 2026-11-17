@@ -1508,33 +1508,33 @@
     "@ky-infra/common" "^1.0.73"
     "@ky-middleground/order-type" "^1.0.101"
 
-"@ky-client/consultant-api@^1.0.477":
-  version "1.0.477"
-  resolved "https://registry.yarnpkg.com/@ky-client/consultant-api/-/consultant-api-1.0.477.tgz#3c2bc8aab724606047a304d5e46b9047cc76b492"
-  integrity sha512-gYUKI2aDVa0kD6PUAwITice0YEJPslA4Hef7JLQRyU0iGVNbbInWhqWZthVldZQa0LPDmjjBXnmmKwn/vV7U/Q==
+"@ky-client/consultant-api@^1.0.499":
+  version "1.0.499"
+  resolved "https://registry.npmjs.org/@ky-client/consultant-api/-/consultant-api-1.0.499.tgz#25f66e1c9deebf8ce584d301ce77d52146689d51"
+  integrity sha512-o7YuUKzP5RnmHHAcoUOzwUyLvPgVK3SuZHeBHD+nTZWb8t/kW0Awg4H1I+Z19WJTGyVjwNmchA1etKtf6gKn/Q==
   dependencies:
-    "@ky-client/consultant-type" "^1.0.321"
+    "@ky-client/consultant-type" "^1.0.343"
     "@ky-infra/common" "^1.0.79"
     "@ky-middleground/im-type" "^1.0.112"
 
-"@ky-client/consultant-type@^1.0.321":
-  version "1.0.321"
-  resolved "https://registry.yarnpkg.com/@ky-client/consultant-type/-/consultant-type-1.0.321.tgz#4350ccc4878c6bfa0c4d5df7e6b66ab8e00e979a"
-  integrity sha512-3/QukF0hMzUh8VU8v0/5sCkForfpvOgEduGW8LDn46joGe3cVkTPW3LlqhkjFd3bffEoEm6VSpQ6b5XS0TJo5Q==
+"@ky-client/consultant-type@^1.0.343":
+  version "1.0.343"
+  resolved "https://registry.npmjs.org/@ky-client/consultant-type/-/consultant-type-1.0.343.tgz#cb487e871751f3b22de91cd68b9b94f8e17fca0c"
+  integrity sha512-zhQzvAvJiXiUAVi+Zffq479V5/TbTJLt3jhQntcmySMUzeIwZk3N04/2Ok6cm70YRDmHHxsFgDYIZUB4peKyfQ==
   dependencies:
     "@ky-infra/common" "^1.0.79"
-    "@ky-middleground/commodity-type" "^1.0.54"
-    "@ky-middleground/order-type" "^1.0.113"
+    "@ky-middleground/commodity-type" "^1.0.55"
+    "@ky-middleground/order-type" "^1.0.124"
 
-"@ky-client/counselling-api@^1.0.241":
-  version "1.0.241"
-  resolved "https://registry.yarnpkg.com/@ky-client/counselling-api/-/counselling-api-1.0.241.tgz#8dadc638a8197c3e172c1ff2d7bf0b3bc3d0b18d"
-  integrity sha512-0uvOhPNb3hTNKOy2AcBNWf5Y09o5zRfl4qk1YzpEQxs+rSJPBTOiWPH6jFrM/RPkU36GTC/8iETgC6YQ1QRUzw==
+"@ky-client/counselling-api@^1.0.250":
+  version "1.0.258"
+  resolved "https://registry.npmjs.org/@ky-client/counselling-api/-/counselling-api-1.0.258.tgz#9801e0be1dca12b75aa595e79b69963c10e43b5f"
+  integrity sha512-muNCoXwQqkE1xyf8YZYUmIDghskY5BwschUle+BGTpi67Zxk1Q/ScwHxzZsBSvz9CS58uIkjr61/Uq1I7FQsLA==
   dependencies:
-    "@ky-client/counselling-type" "^1.0.241"
+    "@ky-client/counselling-type" "^1.0.258"
     "@ky-infra/common" "^1.0.79"
-    "@ky-middleground/commodity-type" "^1.0.54"
-    "@ky-middleground/user-type" "^1.0.268"
+    "@ky-middleground/commodity-type" "^1.0.55"
+    "@ky-middleground/user-type" "^1.0.282"
 
 "@ky-client/counselling-type@^1.0.214", "@ky-client/counselling-type@^1.0.223":
   version "1.0.223"
@@ -1557,6 +1557,17 @@
     "@ky-middleground/marketing-type" "^1.0.57"
     "@ky-middleground/order-type" "^1.0.118"
     "@ky-middleground/user-type" "^1.0.268"
+
+"@ky-client/counselling-type@^1.0.258":
+  version "1.0.258"
+  resolved "https://registry.npmjs.org/@ky-client/counselling-type/-/counselling-type-1.0.258.tgz#a9b37485ccc201d48dabdad818618a77b5a6456c"
+  integrity sha512-cc/2BVsbyhKbLzw5h8ktw54N/RyXY3hcc0KndTpSadDXlr3DBcmgTdP3WQEZW9AvuxQv4tnV/MDSeO2LTPUfUQ==
+  dependencies:
+    "@ky-infra/common" "^1.0.79"
+    "@ky-middleground/commodity-type" "^1.0.55"
+    "@ky-middleground/marketing-type" "^1.0.57"
+    "@ky-middleground/order-type" "^1.0.124"
+    "@ky-middleground/user-type" "^1.0.282"
 
 "@ky-client/counselling-type@^5.0.82":
   version "5.0.107"
@@ -1855,6 +1866,16 @@
     "@ky-infra/handler-base" "^1.0.67"
     "@ky-middleground/user-type" "^1.0.248"
 
+"@ky-middleground/commodity-type@^1.0.55":
+  version "1.0.55"
+  resolved "https://registry.npmjs.org/@ky-middleground/commodity-type/-/commodity-type-1.0.55.tgz#9c68d6a7d63ad5522d0ff68ee4655850fdc3cdc9"
+  integrity sha512-6uFp9XiZ2gYOqDEGkHFK4F8qjehsuieruwxTafNSwYiMO5fqxUfd3yo1B2ZjwbXrEzeH8bOtRPY4mL8ZF7q13Q==
+  dependencies:
+    "@ky-infra/cloudplatform-service" "^1.0.178"
+    "@ky-infra/common" "^1.0.79"
+    "@ky-infra/handler-base" "^1.0.67"
+    "@ky-middleground/user-type" "^1.0.282"
+
 "@ky-middleground/commodity-type@^5.0.21":
   version "5.0.21"
   resolved "https://registry.yarnpkg.com/@ky-middleground/commodity-type/-/commodity-type-5.0.21.tgz#3e91030809baf61a4674e0d9bcee2912041123da"
@@ -1971,6 +1992,14 @@
     "@ky-infra/cloudplatform-service" "^1.0.178"
     "@ky-infra/common" "^1.0.79"
 
+"@ky-middleground/order-type@^1.0.124":
+  version "1.0.124"
+  resolved "https://registry.npmjs.org/@ky-middleground/order-type/-/order-type-1.0.124.tgz#6e398870acd30c893ccb6f6cddd3f9333d2c4207"
+  integrity sha512-KxWXSur4Dpv8wugOmgICyPBGtplwslg7XymhG9S2ZRQ2FWUL2we3hpSCmjL3HdbFrkjmGLn1MrkHWHPLhDbriQ==
+  dependencies:
+    "@ky-infra/cloudplatform-service" "^1.0.178"
+    "@ky-infra/common" "^1.0.79"
+
 "@ky-middleground/order-type@^5.0.16", "@ky-middleground/order-type@^5.0.29":
   version "5.0.31"
   resolved "https://registry.yarnpkg.com/@ky-middleground/order-type/-/order-type-5.0.31.tgz#ca2ea49f414b5beabcb243590ed52dcc8c37559c"
@@ -2009,14 +2038,14 @@
     "@ky-infra/cloudplatform-service" "^1.0.178"
     "@ky-infra/common" "^1.0.79"
 
-"@ky-middleground/user-api@^1.0.272":
-  version "1.0.272"
-  resolved "https://registry.yarnpkg.com/@ky-middleground/user-api/-/user-api-1.0.272.tgz#fb4d5da08252ba71b395c4e1a9014d0f2fc93d28"
-  integrity sha512-tTkCRg/v6Do25HgVmGrk23zhI6IC8Y/QsYwtgl6H5r/mWJrykfQoOiJrBDBwvg3wJaNmhUg3mPNgYftwc48+Og==
+"@ky-middleground/user-api@^1.0.286":
+  version "1.0.286"
+  resolved "https://registry.npmjs.org/@ky-middleground/user-api/-/user-api-1.0.286.tgz#1bb6727af4c92cff883f08ccb760a45b1cf88c08"
+  integrity sha512-/6W4YKWxJtIttZa5t1AIdSoOk8WJ1jjO8k4wl10IDWWtWRuEez21jE2O5fsowys7/k76jx6Q6LfAC8dGcBmkXQ==
   dependencies:
     "@ky-infra/cloudplatform-service" "^1.0.178"
     "@ky-infra/common" "^1.0.79"
-    "@ky-middleground/user-type" "^1.0.268"
+    "@ky-middleground/user-type" "^1.0.282"
 
 "@ky-middleground/user-type@^1.0.217", "@ky-middleground/user-type@^1.0.242":
   version "1.0.245"
@@ -2038,6 +2067,14 @@
   version "1.0.268"
   resolved "https://registry.yarnpkg.com/@ky-middleground/user-type/-/user-type-1.0.268.tgz#51921dcf241d76c54f542138e57fc14725bc8788"
   integrity sha512-GkBV38PjxAIQMkDBOHg+aUnpkejW81h32vkcHyQecmFpdIN6nAdWAB+wcVVSJ1KtXtU4JFVBA+OmlwZAH7XqxQ==
+  dependencies:
+    "@ky-infra/cloudplatform-service" "^1.0.178"
+    "@ky-infra/common" "^1.0.79"
+
+"@ky-middleground/user-type@^1.0.282":
+  version "1.0.282"
+  resolved "https://registry.npmjs.org/@ky-middleground/user-type/-/user-type-1.0.282.tgz#17ed35aff2b77e5910b506d89b3472c1c3893597"
+  integrity sha512-nMUkOJURcBfeg1yDcQUKzJfvFYkUCNxI5dG3YrydWCa6DvQmfrUYYHFILgIdLOW5jkXjjYu3Zu8h11ygzjYY9g==
   dependencies:
     "@ky-infra/cloudplatform-service" "^1.0.178"
     "@ky-infra/common" "^1.0.79"
@@ -10194,7 +10231,7 @@ mini-css-extract-plugin@2.4.6:
   dependencies:
     schema-utils "^4.0.0"
 
-"mini-program@link:.":
+"mini-program2@link:.":
   version "0.0.0"
   uid ""
 
@@ -12631,6 +12668,8 @@ rxjs@^6.6.0:
   version "6.6.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
   integrity sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==
+  dependencies:
+    tslib "^1.9.0"
 
 rxjs@^7.5.5:
   version "7.8.1"
@@ -12638,16 +12677,6 @@ rxjs@^7.5.5:
   integrity sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==
   dependencies:
     tslib "^2.1.0"
-
-sa-sdk-javascript@1.24.12:
-  version "1.24.12"
-  resolved "https://registry.yarnpkg.com/sa-sdk-javascript/-/sa-sdk-javascript-1.24.12.tgz#bb9b38b891378dcbdfde29ad770fcc0e7bfbfc03"
-  integrity sha512-0TuvqrJ2pinxfNtpUplFrSvnT7pyzdGhhXDajS1XuRtzpbjG/IvQk29yj0+soqk51twMc3SCY2ME5sxd1IcqHA==
-
-sa-sdk-miniprogram@^1.20.5:
-  version "1.20.5"
-  resolved "https://registry.yarnpkg.com/sa-sdk-miniprogram/-/sa-sdk-miniprogram-1.20.5.tgz#79f36b5a4b65e31ec984dc44bd9e94c120d20693"
-  integrity sha512-7j9fDz7NoYGbatUqxCl6FnhLPdBgi9EErxjti9D+XMzrENZ//SPtus/+vDZugE2PrDsNYV7yhGkz2IIbZW0gOQ==
 
 safe-array-concat@^1.1.2:
   version "1.1.2"
@@ -13359,7 +13388,16 @@ strict-uri-encode@^2.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
   integrity sha512-QwiXZgpRcKkhTj2Scnn++4PKtWsH0kpzZ62L2R6c/LUVYv7hVnZqcg2+sMuT6R7Jusu1vviK/MFsu6kNJfWlEQ==
 
-"string-width-cjs@npm:string-width@^4.2.0", "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.0.0, string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.2, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -13468,7 +13506,7 @@ stringify-entities@^1.0.1:
     is-alphanumerical "^1.0.0"
     is-hexadecimal "^1.0.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -13488,6 +13526,13 @@ strip-ansi@^4.0.0:
   integrity sha512-4XaJ2zQdCzROZDivEVIDPkcQn8LMFSa8kj8Gxb/Lnwzv9A8VctNZ+lfivC/sV3ivW8ElJTERXZoPBRrZKkNKow==
   dependencies:
     ansi-regex "^3.0.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"
@@ -15078,7 +15123,7 @@ word-wrap@^1.2.5:
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+"wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
@@ -15091,6 +15136,15 @@ wrap-ansi@^6.0.1:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-6.2.0.tgz#e9393ba07102e6c91a3b221478f0257cd2856e53"
   integrity sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==
+  dependencies:
+    ansi-styles "^4.0.0"
+    string-width "^4.1.0"
+    strip-ansi "^6.0.0"
+
+wrap-ansi@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
+  integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
   dependencies:
     ansi-styles "^4.0.0"
     string-width "^4.1.0"

@@ -3,12 +3,22 @@ import BaseKyComponent from '@/components/BaseKyComponent';
 import KYPage from '@/components/KYPage';
 import KYNavigation from '@/components/KYNavigation';
 import { KYLoading } from '@/components/KYLoading';
-import { coachApi } from '@/services';
+import { coachApi, courseApi } from '@/services';
+import Taro from '@tarojs/taro';
 import CustomService from './CustomService';
+
+/**
+ * 支付结果页
+ * - 教练：customService=1 & coachId → 教练客服码
+ * - 课：type=course & Id=productId → 商品客服码
+ */
 
 type States = {
   isCustomService: boolean;
-  info: any;
+  info: {
+    serviceImg: string;
+    serviceText: string;
+  };
 };
 type Props = {};
 
@@ -19,29 +29,56 @@ class Index extends BaseKyComponent<Props, States> {
     super(props);
     this.state = {
       isCustomService: false,
-      info: {},
+      info: { serviceImg: '', serviceText: '' },
     };
   }
 
-  async componentDidMount() {
-    console.log('componentDidMount');
-  }
   onLoad(opt) {
     // 购买教练服务成功，添加客服
     if (opt.customService && opt.customService === '1' && opt.coachId) {
       this.setState({ isCustomService: true });
-      this.getProductInfo(opt.coachId);
+      this.getCoachServiceInfo(opt.coachId);
+      return;
+    }
+
+    // 购买 KY 课成功
+    if (opt.type === 'course' && opt.Id) {
+      this.setState({ isCustomService: true });
+      this.getCourseServiceInfo(opt.Id);
+      return;
+    }
+
+    Taro.showToast({ title: '参数错误', icon: 'none' });
+  }
+
+  async getCoachServiceInfo(coachId: string) {
+    KYLoading.show();
+    const res = await coachApi.getCoachInfo(coachId);
+    KYLoading.hide();
+    if (res.code === 0) {
+      this.setState({
+        info: {
+          serviceImg: res.data.qrCode || '',
+          serviceText: res.data.qrCodeDesc || '',
+        },
+      });
     }
   }
 
-  // 获取产品信息
-  async getProductInfo(coachId: string) {
+  async getCourseServiceInfo(productId: string) {
     KYLoading.show();
-    const res = await coachApi.getCoachInfo(coachId);
-
+    const res = await courseApi.getKYProductDetail(productId);
     KYLoading.hide();
     if (res.code === 0) {
-      this.setState({ info: res.data });
+      const productInfo = res.data?.productInfo || {};
+      this.setState({
+        info: {
+          serviceImg: productInfo.qrCodeImage || '',
+          serviceText: productInfo.qrCodeText || '长按添加客服微信',
+        },
+      });
+    } else {
+      Taro.showToast({ title: res.message || '获取客服信息失败', icon: 'none' });
     }
   }
 
@@ -50,9 +87,9 @@ class Index extends BaseKyComponent<Props, States> {
     return (
       <KYPage className="index">
         <KYNavigation showBack />
-        {isCustomService && (
-          <CustomService info={{ serviceImg: info.qrCode, serviceText: info.qrCodeDesc }} />
-        )}
+        {isCustomService && info.serviceImg ? (
+          <CustomService info={{ serviceImg: info.serviceImg, serviceText: info.serviceText }} />
+        ) : null}
       </KYPage>
     );
   }

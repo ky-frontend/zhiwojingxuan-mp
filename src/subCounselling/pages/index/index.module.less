@@ -28,4 +28,22 @@
     height: 158px;
     z-index: -99;
   }
+
+  .mockEntry {
+    position: fixed;
+    right: 12px;
+    /* 避开 KYPage 环境切换按钮（bottom: 120Px） */
+    bottom: 160Px;
+    z-index: 10001;
+    padding: 10px 12px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    opacity: 0.9;
+
+    .mockEntryText {
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+  }
 }
