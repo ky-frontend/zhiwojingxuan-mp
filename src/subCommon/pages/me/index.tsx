@@ -3,7 +3,7 @@ import { FixTxt } from '@/types/common.type';
 import { observer, inject } from 'mobx-react';
 import BaseKyComponent from '@/components/BaseKyComponent';
 import { checkLogin, gotoLogin } from '@/utils/identity';
-import { getCurrentFullRoute } from '@/utils/navigate';
+import { getCurrentFullRoute, navigateTo } from '@/utils/navigate';
 import KYPage from '@/components/KYPage';
 import KYNavigation from '@/components/KYNavigation';
 import KYTabBar from '@/components/KYTabBar';
@@ -12,6 +12,9 @@ import { UserAliasStatusEnum, UserAliasType } from '@ky-middleground/user-type';
 import Taro from '@tarojs/taro';
 import { userApi } from '@/services';
 import styles from './index.module.less';
+
+/** 我的页-联系客服分流 ID（app-我的） */
+const ME_QIYU_SHUNT_ID = '1098754';
 
 interface MeState {
   myInfo: UserAliasType;
@@ -67,6 +70,11 @@ class Me extends BaseKyComponent<{}, MeState> {
     });
   };
 
+  /** 联系客服：走自有域 H5，避免七鱼第三方访问受限 */
+  handleContactService = () => {
+    navigateTo(`/subWebview/pages/webviewV1/index?qiyuShuntId=${ME_QIYU_SHUNT_ID}`);
+  };
+
   render() {
     const { myInfo } = this.state;
     return (
@@ -108,6 +116,24 @@ class Me extends BaseKyComponent<{}, MeState> {
                 </View>
               </View>
             </View>
+
+            <View className={styles.me_info}>
+              <View className={styles.me_info_i} onClick={this.handleContactService}>
+                <Image
+                  src="https://cdn-public.knowyourself.cc/icon/liaoyu/20231101_lianxi.png"
+                  className={styles.me_info_i_l}
+                  mode="widthFix"
+                />
+                <View className={styles.me_info_i_r}>
+                  <Text className={styles.me_info_i_r_t}>联系客服</Text>
+                  <Image
+                    src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/my/mine_icon_arrow_grey%403x.png"
+                    className={styles.me_info_i_r_a}
+                  />
+                </View>
+              </View>
+            </View>
+
             {/* 退出登录 */}
             <View className={styles.logout}>
               <View
@@ -138,15 +164,6 @@ class Me extends BaseKyComponent<{}, MeState> {
         ) : null}
 
         <KYTabBar index={1} />
-        {/* <Button
-          className={styles.button}
-          type="primary"
-          onClick={() => {
-            Taro.navigateTo({ url: '/subCommon/pages/setting/index' });
-          }}
-        >
-          设置
-        </Button> */}
       </KYPage>
     );
   }

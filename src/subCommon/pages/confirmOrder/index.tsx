@@ -793,9 +793,14 @@ class ConfirmOrder extends BaseKyComponent<IProps, IStates> {
     };
     KYLoading.show();
     let payFunc = paymentApi.createPayment;
-    const { appKey } = this.confirmOrderInfoData;
-    // 心里咨询 WECHAT； 非心里咨询（除 coach） QMF_WECHAT
-    if (appKey !== AppKeyEnum.Zxs && appKey !== 'coach') {
+    const { appKey, appItemKey } = this.confirmOrderInfoData;
+    // 心理咨询 / 教练 / 课：走 /payment/create；其余走全民付
+    const useNormalPayment =
+      appKey === AppKeyEnum.Zxs ||
+      appKey === 'coach' ||
+      appItemKey === AppItemKeyTypeEnum.Course ||
+      appItemKey === 'course';
+    if (!useNormalPayment) {
       orderParams.paymentInfo[0].paymentChannel = 'QMF_WECHAT';
       payFunc = paymentApi.createPaymentV2;
     }

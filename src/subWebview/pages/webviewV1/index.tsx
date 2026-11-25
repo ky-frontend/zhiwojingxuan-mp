@@ -16,10 +16,15 @@ class Webview extends BaseKyComponent<{}, IWebViewState> {
     url: '',
   };
   onLoad(e) {
+    const env = Taro.getStorageSync(ENV_CONFIG);
+    const baseUrl =
+      env === 'dev2' ? 'https://m-dev2.knowyourself.cc' : 'https://m.knowyourself.cc';
+
+    // 七鱼：不直开第三方域（会受限）。本小程序专用静态页 iframe 嵌套七鱼
+    // 页面文件：仓库 static/qiyu-iframe.html，需挂到业务域名（仅此静态文件，不改公共 H5/其他小程序）
     if (e.qiyuShuntId) {
-      console.log(e.qiyuShuntId);
       this.setState({
-        url: `https://zhiwotansuo.qiyukf.com/client?k=b17b7837c7d1fbed61fe2e10d4394d17&wp=1&robotShuntSwitch=0&shuntId=${e.qiyuShuntId}&language=zh-cn&templateId=6650985`,
+        url: `${baseUrl}/zwjingxuan/qiyu-iframe.html?shuntId=${e.qiyuShuntId}`,
       });
       return;
     }
@@ -27,9 +32,6 @@ class Webview extends BaseKyComponent<{}, IWebViewState> {
       let url = decodeURIComponent(e.url);
       // 如果url是以http或者https开头的，就不做处理
       if (!(url.indexOf('http') === 0)) {
-        const env = Taro.getStorageSync(ENV_CONFIG);
-        const baseUrl =
-          env === 'dev2' ? 'https://m-dev2.knowyourself.cc' : 'https://m.knowyourself.cc';
         // 开头有没有/，没有就加上
         if (url.indexOf('/') !== 0) {
           url = '/' + url;
