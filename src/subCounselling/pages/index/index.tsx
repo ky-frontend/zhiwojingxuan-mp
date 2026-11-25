@@ -1,18 +1,14 @@
 import { observer, inject } from 'mobx-react';
 import BaseKyComponent from '@/components/BaseKyComponent';
-import { View, Image, Text } from '@tarojs/components';
+import { View, Image } from '@tarojs/components';
 import KYPage from '@/components/KYPage';
 import KYNavigation from '@/components/KYNavigation';
 import Taro from '@tarojs/taro';
 import KYTabBar from '@/components/KYTabBar';
 import { FixTxt } from '@/types/common.type';
 import { throttle } from '@/modules/utils/tools';
-import { navigateTo } from '@/utils/navigate';
 import styles from './index.module.less';
 import Coach from './Coach';
-
-/** 本地/体验调试入口（验证完可删） */
-const MOCK_COURSE_PRODUCT_ID = 'vlKvwNvAES';
 
 type IStates = {
   navBackColor: number;
@@ -102,13 +98,6 @@ class Index extends BaseKyComponent<{}, IStates> {
     };
   }
 
-  goMockCoursePay = () => {
-    navigateTo('/subMarketings/pages/kyProduct/index', {
-      open: '1',
-      productId: MOCK_COURSE_PRODUCT_ID,
-    });
-  };
-
   render() {
     const { tabFixed } = this.state;
 
@@ -137,10 +126,6 @@ class Index extends BaseKyComponent<{}, IStates> {
         />
         <KYTabBar index={0} />
         <Coach tabFixed={tabFixed} sendTabFixedTop={this.getTabFixedTop} />
-
-        <View className={styles.mockEntry} onClick={this.goMockCoursePay}>
-          <Text className={styles.mockEntryText}>测试付款</Text>
-        </View>
       </KYPage>
     );
   }
