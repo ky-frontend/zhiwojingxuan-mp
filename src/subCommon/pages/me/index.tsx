@@ -11,6 +11,7 @@ import { View, Text, Image } from '@tarojs/components';
 import { UserAliasStatusEnum, UserAliasType } from '@ky-middleground/user-type';
 import Taro from '@tarojs/taro';
 import { userApi } from '@/services';
+import kefuIcon from '@/assets/images/icon_kefu.png';
 import styles from './index.module.less';
 
 /** 我的页-联系客服分流 ID（app-我的） */
@@ -119,18 +120,13 @@ class Me extends BaseKyComponent<{}, MeState> {
 
             <View className={styles.me_info}>
               <View className={styles.me_info_i} onClick={this.handleContactService}>
+                <Image src={kefuIcon} className={styles.me_info_i_l} mode="aspectFit" />
+                <Text className={styles.me_info_i_t}>联系客服</Text>
                 <Image
-                  src="https://cdn-public.knowyourself.cc/icon/liaoyu/20231101_lianxi.png"
-                  className={styles.me_info_i_l}
-                  mode="widthFix"
+                  src="https://cdn-public.knowyourself.cc/icon/wechat/icon_arrow_right@3x.png"
+                  className={styles.me_info_i_a}
+                  mode="aspectFit"
                 />
-                <View className={styles.me_info_i_r}>
-                  <Text className={styles.me_info_i_r_t}>联系客服</Text>
-                  <Image
-                    src="http://kypublic.oss-cn-shanghai.aliyuncs.com/icon/my/mine_icon_arrow_grey%403x.png"
-                    className={styles.me_info_i_r_a}
-                  />
-                </View>
               </View>
             </View>
 
